@@ -1,3 +1,5 @@
 /Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/build/CMakeFiles/DDOS.dir
+/Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/build/CMakeFiles/test.dir
+/Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/build/CMakeFiles/asio.dir
 /Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/build/CMakeFiles/edit_cache.dir
 /Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/build/CMakeFiles/rebuild_cache.dir
