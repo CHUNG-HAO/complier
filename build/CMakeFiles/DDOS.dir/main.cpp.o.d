@@ -1,4 +1,5 @@
-CMakeFiles/DDOS.dir/main.cpp.o: /Users/zhonghonghao/DDOS/main.cpp \
+CMakeFiles/DDOS.dir/main.cpp.o: \
+  /Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__assert \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/include/c++/v1/__config \

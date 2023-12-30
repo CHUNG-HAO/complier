@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/zhonghonghao/DDOS/main.cpp" "CMakeFiles/DDOS.dir/main.cpp.o" "gcc" "CMakeFiles/DDOS.dir/main.cpp.o.d"
+  "/Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/main.cpp" "CMakeFiles/DDOS.dir/main.cpp.o" "gcc" "CMakeFiles/DDOS.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

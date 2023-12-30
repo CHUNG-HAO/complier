@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhonghonghao/DDOS
+# Install script for directory: /Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/zhonghonghao/DDOS/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/zhonghonghao/Mimicking-DDOS-attacks---for-stress-testing/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
