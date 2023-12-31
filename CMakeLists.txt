@@ -1,20 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
-project(DDOS)
+project(compiler)
+
+set(CMAKE_C_STANDARD 99)
+
+add_executable(compiler main.c)
+add_executable(DDOS main.c)
 
 set(CMAKE_CXX_STANDARD 14)
 
-find_package(CURL REQUIRED)
-find_package(Boost REQUIRED)
+find_package(Boost 1.65.1 REQUIRED COMPONENTS system)
 
 add_executable(DDOS main.cpp)
-add_executable(test test.cpp)
-add_executable(asio asio.cpp)
 
-target_link_libraries(DDOS ${CURL_LIBRARIES})
-target_include_directories(DDOS PRIVATE ${Boost_INCLUDE_DIRS})
-
-target_link_libraries(test ${CURL_LIBRARIES})
-target_include_directories(test PRIVATE ${Boost_INCLUDE_DIRS})
-
-target_link_libraries(asio ${CURL_LIBRARIES})
-target_include_directories(asio PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(DDOS Boost::system)
